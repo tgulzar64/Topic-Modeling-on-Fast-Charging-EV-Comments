@@ -1,8 +1,5 @@
 # Topic-Modeling-on-Fast-Charging-EV-Comments
-This project applies Topic Modeling to analyze public opinions and trends around Fast Charging Electric Vehicles (EVs) using Natural Language Processing (NLP).
-
-## Topic Modeling on Fast Charging EV Comments
-This project applies Topic Modeling to analyze public opinions and trends around Fast Charging Electric Vehicles (EVs) using Natural Language Processing (NLP). The goal was to uncover the most discussed themes and concerns in reader comments, helping inform EV strategy, communication, and innovation.
+This project applies Topic Modeling to analyze public opinions and trends around Fast Charging Electric Vehicles (EVs) using Natural Language Processing (NLP).The goal was to uncover the most discussed themes and concerns in reader comments, helping inform EV strategy, communication, and innovation.
 
 ## Data Source:
 Extracted reader comments using the New York Times Comments API.
