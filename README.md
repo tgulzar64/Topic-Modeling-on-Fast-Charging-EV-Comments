@@ -1,40 +1,155 @@
-# Topic-Modeling-on-Fast-Charging-EV-Comments
-This project applies Topic Modeling to analyze public opinions and trends around Fast Charging Electric Vehicles (EVs) using Natural Language Processing (NLP).The goal was to uncover the most discussed themes and concerns in reader comments, helping inform EV strategy, communication, and innovation.
+# Topic Modelling for Articles and Comments
 
-## Data Source:
-Extracted reader comments using the New York Times Comments API.
+This project applies **unsupervised topic modelling** techniques to analyze large-scale textual data from articles and user comments. The goal is to uncover latent themes, compare topic structures across content types, and measure semantic similarity between articles and public discourse.
 
-Focused specifically on articles and discussions related to Fast Charging EVs.
+The project demonstrates an end-to-end NLP pipeline, including text preprocessing, topic extraction using **Latent Dirichlet Allocation (LDA)**, visualization with word clouds, and similarity analysis using cosine similarity.
 
-## Project Workflow:
-Data Collection:
+---
 
-Pulled comments via the NYT API and saved them to a structured dataset for analysis.
+## 📌 Objectives
 
-## Preprocessing:
+- Identify dominant topics in **user comments**
+- Identify dominant topics in **news/articles**
+- Compare and relate themes across articles and comments
+- Quantify similarity between article topics and comment topics
+- Visualize topic structures for interpretability
 
-Converted all text to lowercase
+---
 
-Removed punctuation, stopwords, and numeric characters
+## 🗂️ Data Description
 
-Performed lemmatization for reducing words to base forms
+The analysis uses two primary datasets:
 
-## Topic Modeling:
+**Comments Dataset**
+- Text-based user comments
+- Includes metadata such as author, timestamps, and article references
 
-Implemented Latent Dirichlet Allocation (LDA) via gensim
+**Articles Dataset**
+- Headline
+- Abstract
+- Lead paragraph
+- Publication date
 
-Tuned for the best number of topics
+For articles, relevant text fields are merged into a single combined text column prior to modelling.
 
-Extracted and labeled top keywords per topic for interpretation
+---
 
-## Visualization:
+## 🔄 Methodology
 
-Used WordClouds and matplotlib for visual representation of topic clusters
+### 1. Text Preprocessing
+- Lowercasing
+- Removal of punctuation, numbers, and special characters
+- Stopword removal (NLTK)
+- Tokenization
+- Lemmatization using WordNet
 
-Showcased real sample comments alongside their identified topics
+### 2. Feature Engineering
+- Text vectorization using **CountVectorizer**
+- Stopword filtering during vectorization
+- Bag-of-Words representation
 
-# Tech Stack:
-pandas, nltk, gensim, matplotlib, wordcloud, scikit-learn
+### 3. Topic Modelling
+- Applied **Latent Dirichlet Allocation (LDA)** separately to:
+  - Comments
+  - Articles
+- Extracted top keywords per topic
+- Experimented with number of topics for interpretability
 
-# File Included:
-Topic Modelling_Talha.ipynb: Complete Jupyter Notebook with data cleaning, modeling, and visualization.
+### 4. Topic Visualization
+- Generated **WordClouds** for each topic
+- Visual inspection to validate semantic coherence of topics
+
+### 5. Topic Comparison
+- Topics extracted independently for articles and comments
+- Keyword overlap analysis
+- Comparative interpretation of public discourse vs published content
+
+### 6. Similarity Analysis
+- Combined articles and comments into a shared vector space
+- Computed **cosine similarity matrix**
+- Identified which comments most closely align with which articles
+
+---
+
+## 📊 Key Outputs
+
+- Topic keywords for each LDA topic
+- WordCloud visualizations per topic
+- Topic similarity matrix (Articles × Comments)
+- Interpretable mapping between article themes and public sentiment
+
+---
+
+## 🧠 Example Topics Identified
+
+**Comments Topics (Sample):**
+- Electric vehicle charging infrastructure
+- Energy sources and emissions
+- Climate change and public policy
+- Cost and adoption barriers of EVs
+- Political discourse around energy
+
+**Articles Topics (Sample):**
+- Tesla and EV market trends
+- Climate policy and global warming
+- Innovation in smart mobility
+- Charging technology and infrastructure
+- Automotive industry developments
+
+---
+
+## 🛠️ Tech Stack
+
+- **Python**
+- **Pandas** – Data manipulation
+- **NLTK** – Text preprocessing
+- **Scikit-learn** – LDA, vectorization, similarity metrics
+- **Matplotlib** – Visualization
+- **WordCloud** – Topic visualization
+
+
+---
+
+## 🚀 How to Run
+
+1. **Clone the repository**
+```bash
+   git clone <repository-url>
+   cd <repository-name>
+```
+
+2. **Install dependencies**
+```bash
+   pip install pandas nltk scikit-learn matplotlib wordcloud
+```
+
+3. **Download NLTK resources** (first run only)
+```python
+   import nltk
+   nltk.download('punkt')
+   nltk.download('stopwords')
+   nltk.download('wordnet')
+```
+
+4. **Run the notebook**
+```bash
+   jupyter notebook "Topic Modelling_Talha.ipynb"
+```
+
+---
+
+## 📈 Extensions & Future Work
+
+- Use BERTopic or transformer-based topic models
+- Dynamic topic modelling over time
+- Sentiment-aware topic modelling
+- Interactive dashboards (Tableau / Plotly)
+- Topic evolution across publication dates
+
+---
+
+## 👤 Author
+
+**Talha Gulzar**  
+MS in Business Analytics  
+Babson College
