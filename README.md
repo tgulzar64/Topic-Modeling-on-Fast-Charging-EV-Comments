@@ -153,3 +153,9 @@ For articles, relevant text fields are merged into a single combined text column
 **Talha Gulzar**  
 MS in Business Analytics  
 Babson College
+
+## 📄 Copyright & Usage
+
+© 2025 Talha Gulzar. All rights reserved.
+
+This project is shared for **portfolio and educational purposes only**. Users are responsible for ensuring their use of this scraper complies with Spotrac's terms of service and applicable laws. Unauthorized commercial use or redistribution is prohibited without explicit permission from the author.
